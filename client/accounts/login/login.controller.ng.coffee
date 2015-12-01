@@ -13,6 +13,20 @@ angular.module 'etimesheetApp'
 
 
 
+  $scope.loginOauth = (media) ->
+    switch (media)
+      when 'facebook'
+        console.log('in')
+        Meteor.loginWithFacebook {requestPermissions: ['email']}, (err) ->
+          $scope.error = 'facebook Login error - ' + err
+          console.log('in method', err)
+      when 'google'
+        Meteor.loginWithGoogle {requestPermissions: ['email', 'profile']}, (err) ->
+          $scope.error = 'Google Login error - ' + err
+      when 'twitter'
+        Meteor.loginWithTwitter {requestPermissions: ['email', 'profile']}, (err) ->
+          $scope.error = 'Twitter Login error - ' + err
+
   $scope.toggleToolbar =()->
     if(($scope.userLogged==true)&&($scope.isEmployee==true))
       $scope.employeeToolbar = true
@@ -43,3 +57,5 @@ angular.module 'etimesheetApp'
     ), (err) ->
       $scope.error = 'Login error - ' + err
 ]
+
+

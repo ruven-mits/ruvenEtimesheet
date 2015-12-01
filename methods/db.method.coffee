@@ -27,6 +27,8 @@ Meteor.methods
 
   activate: (user) ->
     Meteor.users.update({ _id: user },{$set:{"profile.isActive":1}})
+    Meteor.users.update({ _id: user },{$set:{"emails.0.verified":true}})
+    
     
 
   projectDelete:(project) ->

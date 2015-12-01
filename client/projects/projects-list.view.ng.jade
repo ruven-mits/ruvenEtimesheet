@@ -25,7 +25,7 @@
           ul Members
             li(ng-repeat='user in users', style="list-style-type: none;")
               input(type='checkbox', checklist-model='member', checklist-value='user.emails[0].address', ng-disabled="shouldBeDisabled(user.deleted)", ng-click="toggle(user._id, member)", ng-checked="exists(user._id, member)" )
-              {{user.profile.fName}} || {{user.emails[0].address}}
+              | {{user.profile.fName}} || {{user.emails[0].address}}
         br
         label(layout='row') Parent
         md-select(ng-model='newProject.parent', placeholder='Select Parent Project if any')

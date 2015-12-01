@@ -29,17 +29,17 @@
         tr
          td(colspan='5') Total number of departments: {{departmentsCount.count}} 
         tr
-          th.mdl-data-table__cell--non-numeric Sn.No
+          th Sn.No
           th
-            a.mdl-data-table__cell--non-numeric(href='#', ng-click="sortType = 'name'; sortReverse = !sortReverse") Name
+            a(href='#', ng-click="sortType = 'name'; sortReverse = !sortReverse") Name
               md-tooltip(md-direction='top') Sort By Name
             span.fa.fa-sort-asc(ng-show="sortType == 'name' && !sortReverse")
             span.fa.fa-sort-desc(ng-show="sortType == 'name' && sortReverse")
           th Description
           th Options
       tbody
-        tr.mdl-data-table__cell--non-numeric(dir-paginate='department in departments | itemsPerPage: perPage |  orderBy:sortType:sortReverse', total-items='departmentsCount.count',  current-page='page')
-         td.mdl-data-table__cell--non-numeric {{$index+1}}
+        tr(dir-paginate='department in departments | itemsPerPage: perPage |  orderBy:sortType:sortReverse', total-items='departmentsCount.count',  current-page='page')
+         td {{$index+1}}
          td {{department.name}}
          td {{department.description}}
          td 

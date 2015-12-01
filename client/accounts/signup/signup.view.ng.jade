@@ -19,10 +19,10 @@
         i.fa.fa-phone-square.fa-2x
         md-input-container.md-block.md-input-has-placeholder(md-no-float='', flex='')
           label Mobile
-          input(ng-model='newEmployee.mobileNum', type='number', ng-required='true')
+          input(ng-model='newEmployee.contact[0].mobileNum', type='number', ng-required='true')
         md-input-container.md-block.md-input-has-placeholder(md-no-float='', flex='')
           label Home
-          input(ng-model='newEmployee.homeNum', type='number', ng-required='true')
+          input(ng-model='newEmployee.contact[0].homeNum', type='number', ng-required='true')
       div(layout='row', layout-align='center center')  
         i.fa.fa-home.fa-2x
         md-input-container.md-block.md-input-has-placeholder(md-no-float='', flex='')
@@ -55,11 +55,11 @@
       div(layout='row', layout-align='space-between center')
         ul.social-buttons(ng-controller="LoginCtrl")
           li.social-icon.social-fb
-            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('facebook')")
-              i.fa.fa-facebook.fb-icon
+            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('facebook')") 
+              i.fa.fa-facebook.fb-icon | Facebook
           li.social-icon.social-gp
-            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('google')")
-              i.fa.fa-google
+            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('google')") 
+              i.fa.fa-google | Google
           li.social-icon.social-tw
-            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('twitter')")
-              i.fa.fa-twitter
+            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('twitter')") 
+              i.fa.fa-twitter | Twitter

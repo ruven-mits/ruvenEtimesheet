@@ -11,11 +11,14 @@ angular.module 'etimesheetApp'
 
   $scope.forgotPwd = ()->
     if ($scope.credentials.email !='')
-      $meteor.forgotPassword({email:$scope.credentials.email}).then (->
-        $state.go 'login'
-        $mdToast.show($mdToast.simple().content('Check Email for reset'))
-      ), (err) ->
-        $scope.error = 'Error Sending forgot password email - ' + err
+      Accounts.forgotPassword({email:$scope.credentials.email}, (error)->
+        if(error)
+          $scope.error = 'Error Sending forgot password email - ' + err
+        else
+          $state.go 'login'
+          $mdToast.show($mdToast.simple().content('Check Email for reset'))
+        )
+        
     else
       $scope.error = 'Enter your email address'
 

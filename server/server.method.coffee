@@ -1,5 +1,7 @@
-'user strict'
+'use strict'
 Meteor.methods
   resetPasswordAdmin: (userId, newPassword)->
-    console.log(userId, newPassword)
     Accounts.setPassword(userId,newPassword)
+    
+  chkEmailVerify:(userId,emailToVerify) ->
+    Accounts.sendVerificationEmail(userId,emailToVerify)

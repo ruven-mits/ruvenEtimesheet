@@ -3,6 +3,9 @@ Meteor.startup ->
   Accounts.emailTemplates.resetPassword.text = (user, url) ->
     url = url.replace('#/','')
 
+  Accounts.emailTemplates.verifyEmail.text = (user, url) ->
+    url = url.replace('#/','')
+
   if Meteor.users.find().count() == 0
     Accounts.createUser({
         email: 'admin@admin.com'

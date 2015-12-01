@@ -10,8 +10,8 @@ angular.module 'etimesheetApp'
     mName:'',
     lName:'',
     contact:[
-      mobileNum:0,
-      homeNum:0
+      mobileNum:''
+      homeNum:''
     ]
     secondaryEmail:''
     address:''

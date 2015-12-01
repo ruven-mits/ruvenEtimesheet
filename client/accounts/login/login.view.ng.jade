@@ -23,14 +23,14 @@
         | Log In
       .or-text-wrapper
         p.or-text or log in using
-      div(layout='row', layout-align='space-between center')
+      div(layout='row')
         ul.social-buttons(ng-controller="LoginCtrl")
           li.social-icon.social-fb
-            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('facebook')")
-              i.fa.fa-facebook.fb-icon
+            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('facebook')") 
+              i.fa.fa-facebook.fb-icon | Facebook
           li.social-icon.social-gp
-            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('google')")
-              i.fa.fa-google
+            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('google')") 
+              i.fa.fa-google | Google
           li.social-icon.social-tw
-            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('twitter')")
-              i.fa.fa-twitter
+            button.mdl-js-button.mdl-js-ripple-effect(ng-click="loginOauth('twitter')") 
+              i.fa.fa-twitter | Twitter

@@ -47,6 +47,7 @@ angular.module 'etimesheetApp'
   $scope.activate = (user) ->
     Meteor.call('activate', user)
     
+    
   $scope.pageChanged = (newPage) ->
     $scope.page = newPage
     

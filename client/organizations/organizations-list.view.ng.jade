@@ -36,23 +36,23 @@
       table.mdl-data-table.mdl-js-data-table.mdl-shadow--2dp.organizationTable(align='left')
         thead
           tr
-            th.mdl-data-table__cell--non-numeric Sn.No
+            th Sn.No
             th
-              a.mdl-data-table__cell--non-numeric(href='#', ng-click="sortType = 'name'; sortReverse = !sortReverse") Name
+              a(href='#', ng-click="sortType = 'name'; sortReverse = !sortReverse") Name
                 md-tooltip(md-direction='top') Sort By Name
               span.fa.fa-sort-asc(ng-show="sortType == 'name' && !sortReverse")
               span.fa.fa-sort-desc(ng-show="sortType == 'name' && sortReverse")
             th Address
             th Contact
             th
-              a.mdl-data-table__cell--non-numeric(href='#', ng-click="sortType = 'email'; sortReverse = !sortReverse") Email
+              a(href='#', ng-click="sortType = 'email'; sortReverse = !sortReverse") Email
                 md-tooltip(md-direction='top') Sort By Email
               span.fa.fa-sort-asc(ng-show="sortType == 'email' && !sortReverse")
               span.fa.fa-sort-desc(ng-show="sortType == 'email' && sortReverse")
             th Options
         tbody
-          tr.mdl-data-table__cell--non-numeric(dir-paginate='organization in organizations | itemsPerPage: perPage |  orderBy:sortType:sortReverse', total-items='organizationsCount.count',  current-page='page')
-           td.mdl-data-table__cell--non-numeric {{$index+1}}
+          tr(dir-paginate='organization in organizations | itemsPerPage: perPage |  orderBy:sortType:sortReverse', total-items='organizationsCount.count',  current-page='page')
+           td {{$index+1}}
            td {{ organization.name }}
            td {{organization.address}}
            td {{organization.contact}}

@@ -22,7 +22,7 @@
         th Added By
         th Created Date
 
-      tr.mdl-data-table__cell--non-numeric(dir-paginate='dailyLog in dailyLogs | itemsPerPage: perPage |  orderBy:sortType:sortReverse', total-items='dailyLogsCount.count',  current-page='page')
+      tr(dir-paginate='dailyLog in dailyLogs | itemsPerPage: perPage |  orderBy:sortType:sortReverse', total-items='dailyLogsCount.count',  current-page='page')
         td {{dailyLog.projectName}}
         td {{dailyLog.Timetaken}} hrs
         td {{dailyLog.description}}

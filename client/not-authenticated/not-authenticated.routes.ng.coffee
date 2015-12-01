@@ -15,3 +15,10 @@ angular.module 'etimesheetApp'
            return 'UNAUTHORIZED'
          )
       ]
+
+  .state 'verify',
+    url: '/verify-email/:verifyEmailToken'
+    template: 'Verify Email'
+    controller:($stateParams, $meteor, $state)->
+      Meteor.call('verifyEmail',$stateParams.verifyEmailToken)
+      $state.go('notAuthenticated')

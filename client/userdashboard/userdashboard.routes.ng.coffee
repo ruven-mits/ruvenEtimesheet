@@ -10,11 +10,13 @@ angular.module 'etimesheetApp'
     resolve:
       currentUser: ['$meteor', ($meteor) ->
         $meteor.requireValidUser((user)->
-          if(user.profile.role=="normal") 
+          if(user.profile.role=="admin") 
+           return 'UNAUTHORIZED'
+          else
             if(user.profile.isActive==0)
               return 'NOTVERIFIED'
              return true;
-           return 'UNAUTHORIZED'
+           
          )
       ]
   .state 'timesheet',
@@ -24,11 +26,12 @@ angular.module 'etimesheetApp'
     resolve:
       currentUser: ['$meteor', ($meteor) ->
         $meteor.requireValidUser((user)->
-          if(user.profile.role=="normal") 
+          if(user.profile.role=="admin") 
+           return 'UNAUTHORIZED'
+          else
             if(user.profile.isActive==0)
               return 'NOTVERIFIED'
              return true;
-           return 'UNAUTHORIZED'
          )
       ]
   
@@ -39,10 +42,11 @@ angular.module 'etimesheetApp'
     resolve:
       currentUser: ['$meteor', ($meteor) ->
         $meteor.requireValidUser((user)->
-          if(user.profile.role=="normal") 
+          if(user.profile.role=="admin") 
+           return 'UNAUTHORIZED'
+          else
             if(user.profile.isActive==0)
               return 'NOTVERIFIED'
              return true;
-           return 'UNAUTHORIZED'
          )
       ]
